@@ -1,5 +1,5 @@
 <div class="card">
-  <p-dataView #dv [value]="chefs" [paginator]="true" [rows]="9" layout="grid">
+  <p-dataView #dv [value]="chefs" [paginator]="true" [rows]="9" layout="grid" styleClass="dv-indx">
       <ng-template pTemplate="header">
           <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
                        
@@ -10,7 +10,10 @@
           <div class="p-col-12">
               <div class="product-list-item">
                   <div class="product-list-detail">
-                      <div class="product-name">{{product.name}}</div>
+                    <a  [routerLink]="['/chef', product.id]">
+                        <div class="product-name">{{product.name}}</div>
+                       </a> 
+                    
                       <div class="product-description">{{product.description}}</div>
                       <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
                       <i class="pi pi-tag product-category-icon"></i><span class="product-category">{{product.category}}</span>
@@ -34,7 +37,9 @@
                       <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
                   </div>
                   <div class="product-grid-item-content">
+                   <a  [routerLink]="['/chef', product.id]">
                     <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.name" />
+                   </a> 
                       <div class="product-name">{{product.name}}</div>
                       <div class="product-description">{{product.description}}</div>
                       <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>

@@ -4,15 +4,16 @@
     <br />
     To Your Door Step
   </h2>
-  <form class="flex-row">
-    <select [(ngModel)]="city" name="city" class="city" (change)="processIt()" required>
-      <option value="">Select City</option>
-      <option *ngFor="let city of cities">{{ city.city }} </option>
-    </select>
-    <select [(ngModel)]="area" name="area">
-      <option value="">Select Area</option>
-      <option *ngFor="let area of areas">{{ area }} </option>
-    </select>
+  <!-- <form class="flex-row">
+
+    <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
     <button>Find Chefs</button>
+  </form>  -->
+
+  <form class="search-container">
+    <input type="text" id="search-bar" placeholder="Find Chefs">
+    <a href="#" class="search-icon">
+        <i class="fa fa-search"></i>
+    </a>
   </form>
 </section>

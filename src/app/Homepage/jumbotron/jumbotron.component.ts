@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-jumbotron',
   templateUrl: './jumbotron.component.html',
-  styleUrls: ['./jumbotron.component.css']
+  styleUrls: ['./jumbotron.component.scss']
 })
 export class JumbotronComponent implements OnInit {
   cities = [
@@ -20,6 +20,14 @@ export class JumbotronComponent implements OnInit {
   areas = [];
   city = '';
   area = '';
+  text: string;
+
+  results: string[];
+  search(event) {
+   // this.mylookupservice.getResults(event.query).then(data => {
+        this.results = this.cities.map(s=>s.city);
+    //});
+}
   processIt() {
     this.areas = this.cities.find(city => city.city == this.city)
       ? this.cities.find(city => city.city == this.city).area

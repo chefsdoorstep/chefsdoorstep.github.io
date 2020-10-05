@@ -27,6 +27,9 @@ import {RatingModule} from 'primeng/rating';
 import {RippleModule} from 'primeng/ripple';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import {AutoCompleteModule} from 'primeng/autocomplete';
+import { ChefComponent } from './chef/chef/chef.component';
+import {GalleriaModule} from 'primeng/galleria';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
     TestimoniesComponent,
     TestimoniesCardComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    ChefComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule,
     BrowserModule,
@@ -55,7 +59,9 @@ import { HttpClientModule } from '@angular/common/http';
     RippleModule,
     HttpClientModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    AutoCompleteModule,
+    GalleriaModule
   ],
   providers: [ChefService],
   bootstrap: [AppComponent]
